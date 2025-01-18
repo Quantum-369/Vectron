@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vectron</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Vectron</h2>
+        </div>
+        <div class="chat-box" id="chat-box">
+            <div class="message assistant">
+                Hello! I'm your AI research assistant. I can help answer questions based on the provided knowledge base. How can I assist you today?
+            </div>
+        </div>
+        <div class="error-message" id="error-message"></div>
+        <div class="chat-input-container">
+            <input type="text" class="chat-input" id="user-input" placeholder="Type your message here..." autocomplete="off">
+            <button class="send-button" id="send-btn">Send</button>
+        </div>
+    </div>
+    <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.chat-container {
+    width: 90%;
+    max-width: 800px;
+    height: 90vh;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    padding: 16px 24px;
+    background: #1a73e8;
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.chat-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.chat-box {
+    flex-grow: 1;
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    line-height: 1.5;
+    position: relative;
+}
+
+.message.user {
+    align-self: flex-end;
+    background: #1a73e8;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.message.assistant {
+    align-self: flex-start;
+    background: #f1f3f4;
+    color: #202124;
+    border-bottom-left-radius: 4px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.message.assistant h1,
+.message.assistant h2,
+.message.assistant h3 {
+    margin: 16px 0 8px 0;
+    color: #1a73e8;
+    font-weight: 600;
+}
+
+.message.assistant h1 { font-size: 1.4em; }
+.message.assistant h2 { font-size: 1.2em; }
+.message.assistant h3 { font-size: 1.1em; }
+
+.message.assistant p {
+    margin: 8px 0;
+}
+
+.message.assistant ul,
+.message.assistant ol {
+    margin: 8px 0;
+    padding-left: 24px;
+}
+
+.message.assistant li {
+    margin: 4px 0;
+}
+
+.message.assistant code {
+    background: #e8eaed;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.message.assistant pre {
+    background: #e8eaed;
+    padding: 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.message.assistant strong {
+    color: #1a73e8;
+    font-weight: 600;
+}
+
+.message.assistant em {
+    font-style: italic;
+    color: #5f6368;
+}
+
+.message.assistant blockquote {
+    border-left: 4px solid #1a73e8;
+    margin: 8px 0;
+    padding: 4px 12px;
+    background: #e8eaed;
+}
+
+.message.assistant a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.message.assistant a:hover {
+    text-decoration: underline;
+}
+
+.message.assistant pre code {
+    display: block;
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #e8eaed;
+}
+
+.typing-indicator {
+    display: none;
+    align-self: flex-start;
+    background: #f1f3f4;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border-bottom-left-radius: 4px;
+    color: #5f6368;
+}
+
+.typing-indicator.visible {
+    display: block;
+}
+
+.chat-input-container {
+    padding: 16px 24px;
+    border-top: 1px solid #e8eaed;
+    display: flex;
+    gap: 12px;
+}
+
+.chat-input {
+    flex-grow: 1;
+    padding: 12px 16px;
+    border: 1px solid #e8eaed;
+    border-radius: 24px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.chat-input:focus {
+    border-color: #1a73e8;
+}
+
+.send-button {
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.send-button:hover {
+    background: #1557b0;
+}
+
+.send-button:disabled {
+    background: #dadce0;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .chat-container {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .chat-header {
+        border-radius: 0;
+    }
+
+    .message {
+        max-width: 90%;
+    }
+}
+
+.error-message {
+    color: #d93025;
+    background: #fce8e6;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 8px 0;
+    display: none;
+}
+
+.error-message.visible {
+    display: block;
+}
